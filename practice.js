@@ -179,7 +179,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function removeItem(myGroceryList, item) {
+  if(myGroceryList == undefined || item == undefined) {
+    return [];
+  }
+  var index = myGroceryList.indexOf(item);
+  if (index > -1) {
+    myGroceryList.splice(index, 1);
+  }
+  return myGroceryList;
+}
+function addItem(myGroceryList, item) {
+  if(myGroceryList == undefined || item == undefined) {
+    return [];
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -189,7 +205,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker() {
+  var array = [];
+  for (let index = 1; index <= 255; index++) {
+    array[index-1] = index; 
+  }
+  return array;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -205,7 +227,11 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(numbers) {
+  return numbers.map(function(number) {
+    return parseInt(number) + 10;
+  });
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -230,6 +256,12 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(arr1, arr2) {
+  if(arr1.length > arr2.length){
+    return arr1;
+  }
+  return arr2;
+}
 
 
 
@@ -242,7 +274,16 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1,arr2) {
+  let newArray = [];
+  for (let index = 0; index < arr1.length; index++) {
+    const element = arr1[index];
+    if(arr2.indexOf(element) != -1){
+      newArray.push(element);
+    }
+  }
+  return newArray;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -282,8 +323,8 @@ var colt = {
 */
 
 //Code Here
-
-
+devMountainEmployees.splice(0,0,tyler,cahlan,ryan,colt);
+console.log(devMountainEmployees.length);
 
 /*
   Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
@@ -291,7 +332,8 @@ var colt = {
 */
 
 //Code Here
-
+let index = devMountainEmployees.indexOf(cahlan);
+devMountainEmployees.splice(index, 1);
 
 
 ////////// PROBLEM 13 //////////
@@ -303,7 +345,7 @@ var colt = {
 */
 
 //Code Here
-
+users = []
 
 
 /*
@@ -322,8 +364,20 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+var user2 = {
+  name: 'Abner Suniga',
+  email: 'abnersuniga@gmail.com',
+  password: 'lol1234',
+  username: 'abnerrrrr'
+};
+var user3 = {
+  name: 'Abner Ferreira',
+  email: 'abnerferreira@gmail.com',
+  password: '12345pass',
+  username: 'ferreira123'
+};
 
-
+users.splice(0,0,user1,user2,user3);
 
 /*
   Now you have a very common data structure. 
@@ -336,7 +390,13 @@ var user1 = {
 */
 
 //Code Here
-
+for (let index = 0; index < users.length; index++) {
+  const user = users[index];
+  if(user.email == 'tylermcginnis33@gmail.com'){
+    users.splice(index, 1);
+    break;
+  }
+}
 
 
 /*
